@@ -6,12 +6,15 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: "192.168.27.14"
 
   config.vm.synced_folder "..", "/vagrant"
-  #config.vm.synced_folder "../site258", "/var/www/www.192.168.27.14.xip.io/public_html/wp-content/plugins/site258"
+  config.vm.synced_folder "../gaboo/gaboo", "/var/www/www.192.168.27.14.xip.io/public_html/wp-content/plugins/gaboo"
+  config.vm.synced_folder "../gaboo/gaboo-core", "/var/www/www.192.168.27.14.xip.io/public_html/wp-content/plugins/gaboo-core"
+  config.vm.synced_folder "../gaboo/gaboo-lock", "/var/www/www.192.168.27.14.xip.io/public_html/wp-content/plugins/gaboo-lock"
+  config.vm.synced_folder "../site258", "/var/www/www.192.168.27.14.xip.io/public_html/wp-content/plugins/site258"
 
   ###############################################################
   # cli/provision
   ###############################################################
 
-  #config.vm.provision "shell", path: "cli/provision.sh"
+  config.vm.provision "shell", path: "../gaboo/_vagrant/cli/provision.sh", privileged: false
 
 end
