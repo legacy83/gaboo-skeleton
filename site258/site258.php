@@ -13,3 +13,26 @@
  * @copyright Copyright (c) 2015, Thiago Senna
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
+
+add_action( 'gaboo_back_compat_safe', 'site258_safe_includes' );
+add_action( 'gaboo_back_compat_safe', 'site258_safe_bootstrap' );
+
+/**
+ * Safely continues
+ * ... with includes needed by the plugin
+ */
+function site258_safe_includes()
+{
+    require_once( 'functionality/public/class-site258-assets.php' );
+    require_once( 'functionality/public/class-site258-shortcodes.php' );
+}
+
+/**
+ * Safely continues
+ * ... with the plugin bootstrap
+ */
+function site258_safe_bootstrap()
+{
+    __gaboo_plugins_loaded( new Site258_Assets() );
+    __gaboo_plugins_loaded( new Site258_Shortcodes() );
+}
