@@ -16,6 +16,7 @@
 
 add_action( 'gaboo_back_compat_safe', 'site258_safe_includes' );
 add_action( 'gaboo_back_compat_safe', 'site258_safe_bootstrap' );
+add_action( 'gaboo_back_compat_safe', 'site258_safe_themes' );
 
 /**
  * Safely continues
@@ -35,4 +36,14 @@ function site258_safe_bootstrap()
 {
     __gaboo_plugins_loaded( new Site258_Assets() );
     __gaboo_plugins_loaded( new Site258_Shortcodes() );
+}
+
+/**
+ * Safely register
+ * ... themes for the current website.
+ */
+function site258_safe_themes()
+{
+    $base_directory = untrailingslashit( dirname( __FILE__ ) );
+    register_theme_directory( "{$base_directory}/themes" );
 }
