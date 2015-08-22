@@ -7,7 +7,7 @@ final class Site258_Assets extends Gaboo_Assets
 {
     function __plugins_loaded()
     {
-        add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), 5 );
+        add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
     }
 
     /**
