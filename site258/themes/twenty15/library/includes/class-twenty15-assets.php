@@ -19,8 +19,9 @@ final class Twenty15_Assets
             $this->register_styles();
 
             wp_enqueue_style( 'twenty15-fonts' );
+            wp_enqueue_style( 'twenty15-base' );
             wp_enqueue_style( 'twenty15-main' );
-            wp_enqueue_style( 'twenty15-style' );
+            wp_enqueue_style( 'twentyfifteen-style' );
 
         } );
     }
@@ -67,8 +68,8 @@ final class Twenty15_Assets
         $template_uri = untrailingslashit( get_template_directory_uri() );
         $stylesheet_uri = untrailingslashit( get_stylesheet_directory_uri() );
         wp_register_style( 'twenty15-parent', "{$template_uri}/style.css" );
-        wp_register_style( 'twenty15-main', "{$stylesheet_uri}/library/assets/css/main.css", array( 'twenty15-parent' ) );
-        wp_register_style( 'twenty15-style', "{$stylesheet_uri}/style.css" );
+        wp_register_style( 'twenty15-base', "{$stylesheet_uri}/library/assets/css/base.css", array( 'twenty15-parent' ) );
+        wp_register_style( 'twenty15-main', "{$stylesheet_uri}/library/assets/css/main.css" );
     }
 
 }
