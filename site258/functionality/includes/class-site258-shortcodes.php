@@ -39,7 +39,7 @@ final class Site258_Shortcodes
         ) );
 
         $clip = new Site258_Clip();
-        return $clip->render_query( 'sticky-posts', $the_query, array(
+        return $clip->render_query( 'shortcodes/sticky-posts', $the_query, array(
             'sticky_posts' => $sticky_posts
         ) );
     }
