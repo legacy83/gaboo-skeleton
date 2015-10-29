@@ -15,7 +15,6 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "../gaboo/gaboo", "/var/www/www.192.168.27.14.xip.io/public_html/wp-content/plugins/gaboo"
   config.vm.synced_folder "../gaboo/gaboo-core", "/var/www/www.192.168.27.14.xip.io/public_html/wp-content/plugins/gaboo-core"
   config.vm.synced_folder "../gaboo/gaboo-lock", "/var/www/www.192.168.27.14.xip.io/public_html/wp-content/plugins/gaboo-lock"
-  config.vm.synced_folder "../gaboo/gaboo-piwik", "/var/www/www.192.168.27.14.xip.io/public_html/wp-content/plugins/gaboo-piwik"
 
   ###############################################################
   # cli/provision
