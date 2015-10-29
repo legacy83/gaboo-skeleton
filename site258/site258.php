@@ -24,12 +24,28 @@ add_action( 'gaboo_back_compat_safe', 'site258_safe_themes' );
  */
 function site258_safe_includes()
 {
-    // component includes
-    require_once( 'functionality/includes/component/class-site258-clip.php' );
-
-    // includes
+    site258_safe_component_includes();
+    site258_safe_model_includes();
     require_once( 'functionality/includes/class-site258-assets.php' );
     require_once( 'functionality/includes/class-site258-shortcodes.php' );
+}
+
+/**
+ * Safely continues
+ * ... with component includes
+ */
+function site258_safe_component_includes()
+{
+    require_once( 'functionality/includes/component/class-site258-clip.php' );
+}
+
+/**
+ * Safely continues
+ * ... with model includes
+ */
+function site258_safe_model_includes()
+{
+    // ...
 }
 
 /**
