@@ -24,8 +24,12 @@ add_action( 'gaboo_back_compat_safe', 'site258_safe_themes' );
  */
 function site258_safe_includes()
 {
-    require_once( 'functionality/public/class-site258-assets.php' );
-    require_once( 'functionality/public/class-site258-shortcodes.php' );
+    // component includes
+    require_once( 'functionality/includes/component/class-site258-clip.php' );
+
+    // includes
+    require_once( 'functionality/includes/class-site258-assets.php' );
+    require_once( 'functionality/includes/class-site258-shortcodes.php' );
 }
 
 /**
