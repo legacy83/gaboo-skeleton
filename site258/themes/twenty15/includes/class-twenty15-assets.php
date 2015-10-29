@@ -5,7 +5,7 @@
  */
 final class Twenty15_Assets
 {
-    function __after_setup_theme()
+    public function __after_setup_theme()
     {
         add_action( 'wp_enqueue_scripts', function () {
 
@@ -29,7 +29,7 @@ final class Twenty15_Assets
     /**
      * Register Fonts
      */
-    function register_fonts()
+    public function register_fonts()
     {
         $google_fonts = new Gaboo_Core_Google_Fonts();
         $google_fonts->family(
@@ -63,7 +63,7 @@ final class Twenty15_Assets
     /**
      * Register Styles
      */
-    function register_styles()
+    public function register_styles()
     {
         $template_uri = untrailingslashit( get_template_directory_uri() );
         $stylesheet_uri = untrailingslashit( get_stylesheet_directory_uri() );
@@ -71,5 +71,4 @@ final class Twenty15_Assets
         wp_register_style( 'twenty15-base', "{$stylesheet_uri}/library/assets/css/base.css", array( 'twenty15-parent' ) );
         wp_register_style( 'twenty15-main', "{$stylesheet_uri}/library/assets/css/main.css" );
     }
-
 }

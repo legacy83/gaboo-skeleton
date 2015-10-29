@@ -6,7 +6,7 @@
  */
 final class Twenty15
 {
-    function __after_setup_theme()
+    public function __after_setup_theme()
     {
         add_filter( 'twentyfifteen_color_schemes', array( $this, 'color_schemes' ) );
     }
@@ -26,7 +26,7 @@ final class Twenty15
      *
      * @return mixed
      */
-    function color_schemes( $color_schemes )
+    public function color_schemes( $color_schemes )
     {
         $color_schemes[ 'twenty15' ] = array(
             'label' => __( 'Twenty15', 'twenty15' ),
@@ -45,5 +45,4 @@ final class Twenty15
             'twenty15' => $color_schemes[ 'twenty15' ],
         );
     }
-
 }
